@@ -38,6 +38,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+  margin-top: 130px;
 }
 #footer {
   background-color: #444;
@@ -47,6 +48,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  box-sizing: border-box;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -54,6 +56,9 @@ nav {
   height: 80px;
   background-color: #252831;
   text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav h1 {
   margin: auto;
@@ -66,12 +71,14 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
-    list-style: none;
-    background-color: #eee;
-    font-size: 17px;
-    margin: 0;
-    width: calc(50% - 80px);
+  padding: 10px 40px 16px;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 /* Display list items side by side */
@@ -223,15 +230,15 @@ nav h1 a {
 .inside header {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 1000;
+  width: 50%;
+  z-index: 1001;
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: 100%;
   position: fixed;
   right: 0;
-  top: 80px;
+  top: 0;
   width: 50%;
 }
 .inside #map {
@@ -276,9 +283,30 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+  padding: 0 40px 30px;
   width: 50%;
+  box-sizing: border-box;
+  text-align: center;
 }
+
+@media (max-width: 980px) {
+  .inside #map-container {
+    position: static;
+    height: 300px;
+    width: 100%;
+  }
+  #restaurant-container, #reviews-container {
+    padding-top: 10px;
+    width: 100%;
+  }
+  .inside header {
+    width: 100%;
+  }
+  .inside #footer {
+    width: 100%;
+  }
+}
+
 #reviews-container {
   padding: 30px 40px 80px;
 }
