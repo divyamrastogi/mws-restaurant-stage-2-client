@@ -193,7 +193,6 @@ createRestaurantHTML = (restaurant) => {
   picture.appendChild(large);
   picture.appendChild(small);
   picture.appendChild(image);
-  debugger;
 
   li.append(picture);
 
