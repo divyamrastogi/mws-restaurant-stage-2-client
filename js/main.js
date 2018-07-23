@@ -11,7 +11,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+
+  registerServiceWorker();
 });
+
+/**
+ * Register the Service Worker.
+ */
+registerServiceWorker = () => {
+  if (!navigator.serviceWorker) {
+    return;
+  }
+  navigator.serviceWorker.register('../service-worker.js').then(() => {
+    console.log('Service worker registered successfully!');
+  }).catch((error) => {
+    console.log('Error while registering service worker:', error);
+  });
+}
 
 /**
  * Fetch all neighborhoods and set their HTML.
