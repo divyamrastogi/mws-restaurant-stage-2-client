@@ -129,7 +129,6 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
-  title.setAttribute('aria-label', "Review");
   container.appendChild(title);
 
   if (!reviews) {
@@ -152,21 +151,17 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  name.setAttribute('aria-label', 'Reviewer Name');
   li.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  date.setAttribute('aria-label', 'Review Date');
   li.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
-  rating.setAttribute('aria-label', 'Rating');
   li.appendChild(rating);
 
   const comments = document.createElement('p');
-  comments.setAttribute('aria-label', 'Rating');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
 
