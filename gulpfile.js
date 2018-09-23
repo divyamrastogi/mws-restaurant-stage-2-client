@@ -149,7 +149,7 @@ gulp.task('serve', function () {
     middleware: function () {
       return [
         gzipStatic(__dirname, {
-          maxAge: 31536000000
+          maxAge: 86400
         })
       ]
     }
